@@ -15,7 +15,7 @@ npm install web3
 Install Package
 
 ```
-npm install fsndomains
+npm install fsndomainjs
 ```
 
 Call 
