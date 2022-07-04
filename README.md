@@ -20,7 +20,7 @@ npm install fsndomains
 
 Call 
 ```
-const domainjs = require('fsndomains');
+const domainjs = require('fsndomainjs');
 ```
 
 Set config
