@@ -1,4 +1,4 @@
-const domainjs = require('fsndomains');
+const domainjs = require('fsndomainjs');
 // set config
 const config = 
 {
@@ -12,6 +12,8 @@ const config =
 	},
 	defaultNetwork: "mainnet"
 }
+
+call();
 
 async function call(){
 	
