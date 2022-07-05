@@ -8,11 +8,11 @@ const config =
 {
 	testnet:{
 		rpcUrl: "",
-		contactAddress: ""
+		contractAddress: ""
 	},
 	mainnet:{ 
 		rpcUrl: "https://mainnet.anyswap.exchange",
-		contactAddress: "0xa1019535e6b364523949eaf45f4b17521c1cb074"
+		contractAddress: "0xa1019535e6b364523949eaf45f4b17521c1cb074"
 	},
 	defaultNetwork: "mainnet"
 }
@@ -28,11 +28,22 @@ exports.SDK = function (options) {
 		_config  = options;
 	}
 	
-	var rpcUrl = _config.testnet.rpcUrl;
-	var contractAddress = _config.testnet.contactAddress;
+	var rpcUrl = _config.mainnet.rpcUrl;
+	var contractAddress = _config.mainnet.contractAddress;
+	
+	if (_config.defaultNetwork == 'testnet'){
+		rpcUrl = _config.testnet.rpcUrl;
+		contractAddress = _config.testnet.contractAddress;
+		if (typeof contractAddress == 'undefined'){
+			contractAddress = _config.testnet.contactAddress;
+		}
+	}
 	if (_config.defaultNetwork == 'mainnet'){
 		rpcUrl = _config.mainnet.rpcUrl;
-		contractAddress = _config.mainnet.contactAddress;
+		contractAddress = _config.mainnet.contractAddress;
+		if (typeof contractAddress == 'undefined'){
+			contractAddress = _config.mainnet.contactAddress;
+		}
 	}
 
 	const web3 = new Web3(new Web3.providers.HttpProvider(rpcUrl));
