@@ -2,7 +2,7 @@
 
 Nodejs SDK
 
-Npm: https://www.npmjs.com/package/fsndomains
+Npm: https://www.npmjs.com/package/fsndomainjs
 
 Github: https://github.com/FusionWeb3Domains/fsndomainjs
 
